@@ -1,0 +1,292 @@
+Simple Calculator Performing Arithmetic , Trigonometric and Logarithmic Operations. 
+
+AIM: 
+
+Write a C program for Simple Calculator Performing Arithmetic , Trigonometric and Logarithmic Operations. 
+
+Source code:
+
+#include <stdio.h>
+#include <math.h>  
+void arithmeticOperations();
+void trigonometricOperations();
+void logarithmicOperations();
+int main()
+ {
+   int choice;
+   while (1) 
+   {
+     printf("\n===== Simple Calculator =====\n");
+     printf("1. Arithmetic Operations\n");
+     printf("2. Trigonometric Operations\n");
+     printf("3. Logarithmic Operations\n");
+     printf("4. Exit\n");
+     printf("Enter your choice: ");
+     scanf("%d", &choice);
+     switch (choice) 
+     {
+       case 1:
+              arithmeticOperations();
+              break;
+       case 2:
+              trigonometricOperations();
+              break;
+       case 3:
+              logarithmicOperations();
+              break;
+       case 4:
+              printf("Exiting program.\n");
+              return 0;
+       default:
+              printf("Invalid choice, please try again.\n");
+     }
+   }
+   return 0;
+ }
+void arithmeticOperations()
+ {
+   double num1, num2, result;
+   int operation;
+
+   printf("\n===== Arithmetic Operations =====\n");
+   printf("1. Addition\n");
+   printf("2. Subtraction\n");
+   printf("3. Multiplication\n");
+   printf("4. Division\n");
+   printf("Enter your choice: ");
+   scanf("%d", &operation);
+   if (operation >= 1 && operation <= 4) 
+   {
+     printf("Enter two numbers: ");
+     scanf("%lf %lf", &num1, &num2);
+     switch (operation)
+     {
+       case 1:
+              result = num1 + num2;
+              printf("Result: %.2lf\n", result);
+              break;
+       case 2:
+              result = num1 - num2;
+              printf("Result: %.2lf\n", result);
+              break;
+       case 3:
+              result = num1 * num2;
+              printf("Result: %.2lf\n", result);
+              break;
+       case 4:
+              if (num2 != 0) 
+              {
+                result = num1 / num2;
+                printf("Result: %.2lf\n", result);
+              } 
+              else 
+              {
+                printf("Error! Division by zero.\n");
+              }
+              break;
+       }
+     } 
+     else 
+     {
+       printf("Invalid operation.\n");
+     }
+ }
+void trigonometricOperations() 
+ {
+   double angle, result;
+   int operation;
+   printf("\n===== Trigonometric Operations =====\n");
+   printf("1. Sine (sin)\n");
+   printf("2. Cosine (cos)\n");
+   printf("3. Tangent (tan)\n");
+   printf("Enter your choice: ");
+   scanf("%d", &operation);
+   if (operation >= 1 && operation <= 3) 
+   {
+     printf("Enter the angle in degrees: ");
+     scanf("%lf", &angle);
+     angle = angle * (M_PI / 180.0);
+     switch (operation) 
+     {
+       case 1:
+              result = sin(angle);
+              printf("sin(%.2lf degrees) = %.2lf\n", angle *    (180.0 / M_PI), result);
+              break;
+       case 2:
+              result = cos(angle);
+              printf("cos(%.2lf degrees) = %.2lf\n", angle *    (180.0 / M_PI), result);
+              break;
+       case 3:
+              result = tan(angle);
+              printf("tan(%.2lf degrees) = %.2lf\n", angle *    (180.0 / M_PI), result);
+              break;
+     }
+   } 
+   else 
+   {
+     printf("Invalid operation.\n");
+   }
+ }
+void logarithmicOperations()
+ {
+   double number, result;
+   int operation;
+   printf("\n===== Logarithmic Operations =====\n");
+   printf("1. Natural Logarithm (ln)\n");
+   printf("2. Logarithm Base 10 (log)\n");
+   printf("Enter your choice: ");
+   scanf("%d", &operation);
+   if (operation == 1 || operation == 2) 
+   {
+     printf("Enter a number: ");
+     scanf("%lf", &number);
+     if (number <= 0) 
+     {
+       printf("Error! Logarithm of a non-positive number is    undefined.\n");
+       return;
+     }
+     switch (operation) 
+      {
+        case 1:
+               result = log(number); // Natural logarithm (ln)
+               printf("ln(%.2lf) =    %.2lf\n", number, result);
+               break;
+        case 2:
+               result = log10(number); // Logarithm base 10
+               printf("log(%.2lf) =    %.2lf\n", number, result);
+               break;
+      }
+     } 
+   else
+     {
+       printf("Invalid operation.\n");
+     }
+ }
+Output:
+  ===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 1
+===== Arithmetic Operations =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+Enter your choice: 1
+Enter two numbers: 10 540
+Result: 550.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 1          
+===== Arithmetic Operations  =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+Enter your choice: 2
+Enter two numbers: 990 330
+Result: 660.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 1
+===== Arithmetic Operations =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+Enter your choice: 3
+Enter two numbers: -10 18
+Result: -180.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 1
+===== Arithmetic Operations =====
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+Enter your choice: 4
+Enter two numbers: 10000 250
+Result: 40.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 2
+===== Trigonometric Operations =====
+1. Sine (sin)
+2. Cosine (cos)
+3. Tangent (tan)
+Enter your choice: 1
+Enter the angle in degrees: 90
+sin(90.00 degrees) = 1.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 2
+===== Trigonometric Operations =====
+1. Sine (sin)
+2. Cosine (cos)
+3. Tangent (tan)
+Enter your choice: 2
+Enter the angle in degrees: 90
+cos(90.00 degrees) = 0.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 2
+===== Trigonometric Operations =====
+1. Sine (sin)
+2. Cosine (cos)
+3. Tangent (tan)
+Enter your choice: 3
+Enter the angle in degrees: 45
+tan(45.00 degrees) = 1.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 3
+===== Logarithmic Operations =====
+1. Natural Logarithm (ln)
+2. Logarithm Base 10 (log)
+Enter your choice: 1
+Enter a number: 100
+ln(100.00) = 4.61
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 3
+===== Logarithmic Operations =====
+1. Natural Logarithm (ln)
+2. Logarithm Base 10 (log)
+Enter your choice: 2
+Enter a number: 100
+log(100.00) = 2.00
+===== Simple Calculator =====
+1. Arithmetic Operations
+2. Trigonometric Operations
+3. Logarithmic Operations
+4. Exit
+Enter your choice: 4
+Exiting program.
+=== Code Execution Successful ===
